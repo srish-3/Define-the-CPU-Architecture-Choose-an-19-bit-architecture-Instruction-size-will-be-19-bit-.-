@@ -1,0 +1,25 @@
+module ALU(
+  input[18:0] r2,
+  input [18:0] r3,
+  input[3:0] opcode,
+  ouput reg [18:0] r1
+);
+  always @(*) begin
+  cose(opcode)
+  4'b0000: r1 = r2+r3;//ADD
+  4'b0001: r1 = r2-r3;//SUB
+  4'b0010: r1 = r2*r3;// MUL
+  4'b0011: r1 = r2/r3;//DIV
+  4'b0100: r1 = r2&r3;//AND
+  4'b0101: r1 = r2|r3;//OR
+  4'b0110: r1 = r2^r3;//XOR
+  4'b0111: r1 = ~r2;//NOT
+  4'b1000: r1 = r2+1;//INC
+  4'b1001: r1 = r2-1;//DEC
+  default: r1 =19'b0;
+ endcase
+end
+endmodule
+  
+
+  
